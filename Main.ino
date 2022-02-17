@@ -16,7 +16,7 @@ void setup() {
     pinMode(LED_BUILTIN, OUTPUT);
     leftMotor.attach(3);
     rightMotor.attach(5);
-};
+}
 
 void loop() {
     motors.forward();
