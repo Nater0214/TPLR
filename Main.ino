@@ -32,6 +32,12 @@ class Motors {
             leftMotor.write(0);
             rightMotor.write(0);
         }
+
+        void right() {
+            digitalWrite(LED_BUILTIN, HIGH);
+            leftMotor.write(180);
+            rightMotor.write(180);
+        }
 };
 Motors motors;
 
