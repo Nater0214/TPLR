@@ -46,14 +46,11 @@ void setup() {
 void loop() {
     distance = distanceSensor.dist();
 
-    /*
-    if (distance <= 1) {}
-    else if (distance <= 10) {
+    if (distance <= 10) {
         motors.stop();
     } else {
         motors.forward();
     }
-    */
 
     Serial.println(distance);
     delay(500);
