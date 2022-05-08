@@ -7,39 +7,7 @@ HCSR04 distanceSensor(9, 10);
 int readings = 0;
 float distance = 0;
 
-class Motors {
-    public:
-        void forward() {
-            digitalWrite(LED_BUILTIN, HIGH);
-            leftMotor.write(0);
-            rightMotor.write(180);
-        }
-
-        void backwards() {
-            digitalWrite(LED_BUILTIN, HIGH);
-            leftMotor.write(180);
-            rightMotor.write(0);
-        }
-
-        void stop() {
-            digitalWrite(LED_BUILTIN, LOW);
-            leftMotor.write(90);
-            rightMotor.write(90);
-        }
-
-        void left() {
-            digitalWrite(LED_BUILTIN, HIGH);
-            leftMotor.write(0);
-            rightMotor.write(0);
-        }
-
-        void right() {
-            digitalWrite(LED_BUILTIN, HIGH);
-            leftMotor.write(180);
-            rightMotor.write(180);
-        }
-};
-Motors motors;
+Motors motors(leftMotors, rightMotors);
 
 void setup() {
     Serial.begin(9600);
