@@ -1,10 +1,10 @@
 #include <Servo.h>
 #include <HCSR04.h>
+#include "Motors.h"
 
-Servo leftMotor;
-Servo rightMotor;
+Servo leftMotors;
+Servo rightMotors;
 HCSR04 distanceSensor(9, 10);
-int readings = 0;
 float distance = 0;
 
 Motors motors(leftMotors, rightMotors);
@@ -13,14 +13,16 @@ void setup() {
     Serial.begin(9600);
 
     pinMode(LED_BUILTIN, OUTPUT);
-    leftMotor.attach(3);
-    rightMotor.attach(5);
+    leftMotors.attach(3);
+    rightMotors.attach(5);
 }
 
 void loop() {
     distance = distanceSensor.dist();
 
-    if (distance <= 10) {
+    /*
+    if (distance < 1) {
+    } else if (distance <= 10) {
         motors.stop();
     } else {
         motors.forward();
@@ -28,4 +30,5 @@ void loop() {
 
     Serial.println(distance);
     delay(250);
+    */
 }
