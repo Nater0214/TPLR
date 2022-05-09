@@ -1,10 +1,11 @@
 #include <Servo.h>
 
 class Motors {
-    public:
+    private:
         Servo leftMotors;
         Servo rightMotors;
-
+    
+    public:
         Motors(Servo left, Servo right) {
             leftMotors = left;
             rightMotors = right;
